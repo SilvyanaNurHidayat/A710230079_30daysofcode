@@ -1,0 +1,6 @@
+import random
+minimum = 5
+maximum = 50
+angka_acak = random.randint(minimum, maximum)
+
+print("Angka acak yang dihasilkan adalah:", angka_acak)
