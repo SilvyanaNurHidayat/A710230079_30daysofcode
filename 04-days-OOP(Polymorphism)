@@ -1,0 +1,22 @@
+class silvyana:
+  def sapa(self):
+    print('Hallo, aku Silvyana')
+  def prodi(self):
+    print('Aku kuliah di Prodi Pendidikan Teknik Informatika')
+  def nim(self):
+    print('Nomor Induk Mahasiswa saya adalah A71230079')
+
+class fadhilah:
+  def sapa(self):
+    print('Hallo, aku Fadhilah')
+  def prodi(self):
+    print('Aku kuliah di Prodi Pendidikan Teknik Informatika')
+  def nim(self):
+    print('Nomor Induk Mahasiswa saya adalah A71230078')
+
+objek1 = silvyana()
+objek2 = fadhilah()
+for country in (objek1, objek2):
+  country.sapa()
+  country.prodi()
+  country.nim()
