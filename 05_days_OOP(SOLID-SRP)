@@ -1,0 +1,20 @@
+class Pesan:
+  def __init__(self, pengirim, penerima, isi):
+    self.pengirim = pengirim
+    self.penerima = penerima
+    self.isi = isi
+
+  def kirim(self):
+    print(f"Mengirim pesan dari {self.pengirim} ke {self.penerima}: {self.isi}")
+
+class PengirimPesan:
+    def __init__(self, pesan):
+        self.pesan = pesan
+
+    def kirim_email(self):
+        print(f"Email dari {self.pesan.pengirim} ke {self.pesan.penerima}: {self.pesan.isi}")
+
+pesan = Pesan("hendra609@gmail.com", "Benz@gmail.com", "Halo, Benz. Bagaimana kalau kita kerja kelompok di hari sabtu?")
+pengirim_pesan = PengirimPesan(pesan)
+
+pengirim_pesan.kirim_email()
