@@ -1,0 +1,49 @@
+# Import library untuk format tanggal
+from datetime import date
+
+# Definisikan fungsi untuk membuat cetakan surat
+def buat_cetakan_surat(nama, alamat, tanggal, isi_surat):
+  # Format tanggal
+  tanggal_str = tanggal.strftime("%d %B %Y")
+
+  # Format isi surat
+  isi_surat_formatted = "\n".join(isi_surat.split("\n"))
+
+  # Template surat
+  template_surat = f"""
+  Kepada Yth. {nama},
+  Di {alamat},
+
+  {isi_surat_formatted}
+
+  Demikian surat ini saya sampaikan.
+
+  Hormat saya,
+
+  {nama_pengirim}
+  """
+
+  return template_surat
+
+# Contoh penggunaan fungsi
+nama = "Santi"
+alamat = "Jl. Blewah No. 14, Surakarta"
+tanggal = date.today()
+isi_surat = """
+Dengan hormat,
+
+Melalui surat ini, saya ingin menyampaikan rasa terima kasih atas bantuan Bapak/Ibu yang telah memberikan donasi untuk korban bencana alam di Jawa Tengah. Bantuan Bapak/Ibu sangat berarti bagi para korban dan membantu mereka untuk pulih dari bencana.
+
+Semoga amal baik Bapak/Ibu dibalas oleh Allah SWT.
+
+Hormat saya,
+
+Santi
+"""
+
+nama_pengirim = "Andi"
+
+cetakan_surat = buat_cetakan_surat(nama, alamat, tanggal, isi_surat)
+
+# Cetak hasil
+print(cetakan_surat)
