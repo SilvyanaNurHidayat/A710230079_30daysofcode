@@ -1,0 +1,32 @@
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton
+
+class Example(QWidget):
+
+    def __init__(self):
+        super().__init__()
+
+        self.initUI()
+
+    def initUI(self):
+        self.setWindowTitle('Contoh PyQt5')
+        self.setGeometry(100, 100, 250, 150)
+
+        label = QLabel('Halo, Dunia!', self)
+        label.setGeometry(10, 10, 150, 20)
+
+        button = QPushButton('Klik Saya', self)
+        button.setGeometry(10, 40, 100, 30)
+        button.clicked.connect(self.buttonClicked)
+
+        self.show()
+
+    def buttonClicked(self):
+        sender = self.sender()
+        if sender.text() == 'Klik Saya':
+            sender.setText('Tombol Diklik!')
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())
