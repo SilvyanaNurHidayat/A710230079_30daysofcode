@@ -1,0 +1,36 @@
+class Animal:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def sound(self):
+        print("The animal makes a sound.")
+
+    def eat(self):
+        print(f"{self.name} is eating.")
+
+    def sleep(self):
+        print(f"{self.name} is sleeping.")
+
+
+class Dog(Animal):
+    def sound(self):
+        print("The dog barks.")
+
+
+class Cat(Animal):
+    def sound(self):
+        print("The cat meows.")
+
+
+# Membuat objek dari kelas Dog
+my_dog = Dog("Rex", 3)
+my_dog.sound()  # Output: The dog barks.
+my_dog.eat()    # Output: Rex is eating.
+my_dog.sleep()  # Output: Rex is sleeping.
+
+# Membuat objek dari kelas Cat
+my_cat = Cat("Whiskers", 2)
+my_cat.sound()  # Output: The cat meows.
+my_cat.eat()    # Output: Whiskers is eating.
+my_cat.sleep()  # Output: Whiskers is sleeping.
