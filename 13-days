@@ -1,0 +1,22 @@
+daftar_barang = []
+total = 0
+
+jumlah_barang = int(input('Masukkan jumlah barang: '))
+for i in range(jumlah_barang):
+    namabrg = input(f"Nama barang: ")
+    jmlbrg = int(input(f'Jumlah: '))
+    hrgbrg = int(input(f'Harga: '))
+    totbrg = jmlbrg * hrgbrg
+    total += totbrg
+    daftar_barang.append(f'{namabrg}   {jmlbrg}x pcs    Rp{hrgbrg}    Rp{totbrg}')
+
+judul = 'RINCIAN HARGA'
+print(judul.center(50))
+print('==========================================')
+with open('invoice.txt', 'w') as file:
+    for i, brg in enumerate(daftar_barang):
+        print(f'{brg}')
+        file.write(f'{brg}\n')
+print('==========================================')
+print(f'Total harga: Rp{total}')
+print()
