@@ -1,0 +1,43 @@
+class BankAccount:
+    def __init__(self, account_number, balance):
+        self.__account_number = account_number
+        self.__balance = balance
+
+    def get_account_number(self):
+        return self.__account_number
+
+    def get_balance(self):
+        return self.__balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+        else:
+            print("Invalid deposit amount.")
+
+    def withdraw(self, amount):
+        if amount > 0 and amount <= self.__balance:
+            self.__balance -= amount
+        else:
+            print("Invalid withdrawal amount or insufficient balance.")
+
+    def display(self):
+        print(f"Account Number: {self.get_account_number()}")
+        print(f"Balance: {self.get_balance()}")
+
+
+# Membuat objek BankAccount
+account = BankAccount("1234567890", 1000)
+
+# Mengakses atribut dan fungsi melalui method
+account.display()
+print(account.get_account_number())
+print(account.get_balance())
+
+# Membuat deposit
+account.deposit(500)
+account.display()
+
+# Membuat penarikan
+account.withdraw(200)
+account.display()
