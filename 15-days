@@ -1,0 +1,15 @@
+class Calculator:
+    def add(self, a, b):
+        return a + b
+
+    def add(self, a, b, c):
+        return a + b + c
+
+# Membuat objek dari kelas Calculator
+calculator = Calculator()
+
+# Menggunakan method add() dengan dua parameter
+print(calculator.add(1, 2))  # Output: 3
+
+# Menggunakan method add() dengan tiga parameter
+print(calculator.add(1, 2, 3))  # Output: 6
