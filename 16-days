@@ -1,0 +1,13 @@
+teman = [] #membuat list
+for kontak in range (1,6): #meminta user memasukkan inputan
+    nama = input(f'masukkan nama teman {kontak}: ')
+    nomor = input(f'masukkan nomor hp {nama}: ')
+    teman.append((nama,nomor))
+judul = 'Phone Book'
+#menampilkan hasil  
+print()
+print(judul.center(50))
+print()
+for kontak in range(5) :
+    nama, nomor = teman[kontak]
+    print(f'{kontak+1}.[{nama}] = [{nomor}]')
