@@ -1,0 +1,58 @@
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QMessageBox
+
+class MyApp(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        self.setWindowTitle('Aplikasi Penghitung Total Harga Barang')
+        self.setGeometry(100, 100, 400, 200)
+
+        # Membuat label dan input field untuk nama barang
+        self.label_nama = QLabel('Nama Barang:', self)
+        self.input_nama = QLineEdit(self)
+
+        # Membuat label dan input field untuk jumlah barang
+        self.label_jumlah = QLabel('Jumlah Barang:', self)
+        self.input_jumlah = QLineEdit(self)
+
+        # Membuat label dan input field untuk harga barang
+        self.label_harga = QLabel('Harga Barang:', self)
+        self.input_harga = QLineEdit(self)
+
+        # Membuat tombol untuk menghitung total harga
+        self.button_hitung = QPushButton('Hitung Total Harga', self)
+        self.button_hitung.clicked.connect(self.calculate_total)
+
+        # Membuat label untuk menampilkan total harga
+        self.label_total = QLabel('Total Harga:', self)
+
+        # Membuat layout vertikal dan menambahkan komponen-komponen ke dalamnya
+        layout = QVBoxLayout()
+        layout.addWidget(self.label_nama)
+        layout.addWidget(self.input_nama)
+        layout.addWidget(self.label_jumlah)
+        layout.addWidget(self.input_jumlah)
+        layout.addWidget(self.label_harga)
+        layout.addWidget(self.input_harga)
+        layout.addWidget(self.button_hitung)
+        layout.addWidget(self.label_total)
+
+        self.setLayout(layout)
+        self.show()
+
+    def calculate_total(self):
+        try:
+            jumlah = int(self.input_jumlah.text())
+            harga = float(self.input_harga.text())
+            total = jumlah * harga
+            self.label_total.setText(f'Total Harga: Rp {total:.2f}')
+        except ValueError:
+            QMessageBox.warning(self, 'Error', 'Masukkan jumlah barang dalam angka dan harga barang dalam angka atau desimal.')
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = MyApp()
+    sys.exit(app.exec_())
