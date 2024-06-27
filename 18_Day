@@ -1,0 +1,16 @@
+class Contoh:
+    def __init__(self):
+        self.__variabel_privat = 10  # Variabel privat dengan awalan __
+
+    def get_variabel_privat(self):
+        return self.__variabel_privat
+
+    def set_variabel_privat(self, nilai_baru):
+        self.__variabel_privat = nilai_baru
+
+
+obj = Contoh()
+print(obj.get_variabel_privat())  # Output: 10
+obj.set_variabel_privat(20)
+print(obj.get_variabel_privat())  # Output: 20
+
