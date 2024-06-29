@@ -1,0 +1,25 @@
+#contoh menggunakan map untuk mengkuadratkan setiap elemen dalam list
+def kuadrat(x):
+    return x * x
+
+angka = [1, 2, 3, 4, 5]
+hasil = map(kuadrat, angka)
+print(list(hasil))  # Output: [1, 4, 9, 16, 25]
+
+#contoh menggunakan filter untuk mendapatkan angka genap dalam list
+def genap(x):
+    return x % 2 == 0
+
+angka = [1, 2, 3, 4, 5]
+hasil = filter(genap, angka)
+print(list(hasil))  # Output: [2, 4]
+
+#contoh menggunakan list comprehension untuk mendapatkan angka genap dari list
+
+angka = [1, 2, 3, 4, 5]
+hasil = [x for x in angka jika x % 2 == 0]
+print(hasil)  # Output: [2, 4]
+
+angka = [1, 2, 3, 4, 5]
+kuadrat = {x: x * x for x in angka}
+print(kuadrat)  # Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
