@@ -1,0 +1,22 @@
+class InvalidNameError(Exception):
+    def __init__(self, message="Nama harus diawali dengan huruf kapital."):
+        self.message = message
+        super().__init__(self.message)
+
+def cek_nama(nama):
+    if not nama[0].isupper():
+        raise InvalidNameError()
+    return nama
+
+try:
+    nama = input("Masukkan nama Anda: ")
+    cek_nama(nama)
+    print("Nama yang Anda masukkan adalah:", nama)
+except InvalidNameError as e:
+    print("Terjadi kesalahan:", e)
+except IndexError:
+    print("Nama tidak boleh kosong.")
+except Exception as e:
+    print("Kesalahan tidak terduga:", e)
+finally:
+    print("Program selesai")
