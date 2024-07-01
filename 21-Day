@@ -1,0 +1,55 @@
+import math
+import matplotlib.pyplot as plt
+import numpy as np
+
+def solve_quadratic(a, b, c):
+    """Solve the quadratic equation ax^2 + bx + c = 0"""
+    d = b**2 - 4*a*c
+    if d < 0:
+        return None  # No real roots
+    elif d == 0:
+        x = -b / (2*a)
+        return (x,)
+    else:
+        x1 = (-b + math.sqrt(d)) / (2*a)
+        x2 = (-b - math.sqrt(d)) / (2*a)
+        return (x1, x2)
+
+def plot_quadratic(a, b, c):
+    """Plot the quadratic equation ax^2 + bx + c = 0"""
+    x = np.linspace(-10, 10, 400)
+    y = a * x**2 + b * x + c
+    
+    plt.figure(figsize=(8, 6))
+    plt.plot(x, y, label=f'{a}x^2 + {b}x + {c} = 0')
+    plt.axhline(0, color='black', linewidth=0.5)
+    plt.axvline(0, color='black', linewidth=0.5)
+    plt.grid(color='gray', linestyle='--', linewidth=0.5)
+    plt.title('Graph of Quadratic Equation')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.legend()
+    plt.show()
+
+def main():
+    # Exercise: Ask user for input
+    try:
+        a = float(input("Enter coefficient a: "))
+        b = float(input("Enter coefficient b: "))
+        c = float(input("Enter coefficient c: "))
+    except ValueError:
+        print("Please enter valid numbers for the coefficients.")
+        return
+    
+    # Solve the quadratic equation
+    roots = solve_quadratic(a, b, c)
+    if roots:
+        print(f"The roots of the equation are: {roots}")
+    else:
+        print("The equation has no real roots.")
+    
+    # Plot the quadratic equation
+    plot_quadratic(a, b, c)
+
+if __name__ == '__main__':
+    main()
