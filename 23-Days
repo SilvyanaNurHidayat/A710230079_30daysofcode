@@ -1,0 +1,45 @@
+# Membuat dictionary kosong menggunakan kurung kurawal
+dictionary1 = {}
+
+# Membuat dictionary kosong menggunakan fungsi dict()
+dictionary2 = dict()
+
+# Membuat dictionary dengan key dan value berupa string
+dictionary = {"nama": "Budi", "umur": 25, "pekerjaan": "Guru"}
+
+# Membuat dictionary dengan key berupa string dan value berupa list
+dictionary = {"hobi": ["membaca", "bermain sepak bola", "menonton film"]}
+
+# Membuat dictionary dengan key dan value campuran
+dictionary = {"nama": "Andi", "umur": 30, "pekerjaan": "Dokter", "hobi": ["menyanyi", "memasak"]}
+
+# Mengakses nilai elemen dictionary dengan key
+nilai_nama = dictionary["nama"]
+print(nilai_nama)  # Output: Budi
+
+# Mengakses nilai elemen dictionary dengan key yang tidak ada
+nilai_alamat = dictionary.get("alamat")
+print(nilai_alamat)  # Output: None
+
+# Mengakses elemen dictionary dengan menggunakan loop for
+for key, value in dictionary.items():
+    print(f"{key}: {value}")
+
+# Menambahkan elemen baru ke dictionary
+dictionary["alamat"] = "Jalan Anyelir No. 12"
+print(dictionary)  # Output: {'nama': 'Budi', 'umur': 25, 'pekerjaan': 'Guru', 'alamat': 'Jalan Anyelir No. 12'}
+
+# Memperbarui nilai elemen dictionary yang sudah ada
+dictionary["umur"] = 26
+print(dictionary)  # Output: {'nama': 'Budi', 'umur': 26, 'pekerjaan': 'Guru', 'alamat': 'Jalan Anyelir No. 12'}
+
+# Menghapus elemen dictionary dengan key
+del dictionary["pekerjaan"]
+print(dictionary)  # Output: {'nama': 'Budi', 'umur': 26, 'alamat': 'Jalan Anyelir No. 12'}
+
+# Menghapus elemen dictionary dengan menggunakan fungsi pop()
+nilai_alamat = dictionary.pop("alamat")
+print(nilai_alamat)  # Output: Jalan Anyelir No. 12
+print(dictionary)  # Output: {'nama': 'Budi', 'umur': 26}
+
+
