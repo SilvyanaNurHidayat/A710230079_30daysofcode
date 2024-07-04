@@ -1,0 +1,16 @@
+import csv
+
+try:
+  with open("data_baru.csv", "w") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Nama", "Usia", "Pekerjaan"])
+    writer.writerow(["Budi", 30, "Guru"])
+    writer.writerow(["Ani", 25, "Dokter"])
+
+  with open("data_baru.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+
+except Exception as e:
+    print("Terjadi error:", e)
