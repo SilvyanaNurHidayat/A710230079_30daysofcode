@@ -1,0 +1,35 @@
+import datetime
+import os
+import json
+
+# Menggunakan modul datetime untuk mendapatkan tanggal dan waktu saat ini
+now = datetime.datetime.now()
+print("Waktu saat ini:", now)
+
+# Menggunakan modul os untuk membuat direktori baru
+new_directory = "contoh_direktori"
+if not os.path.exists(new_directory):
+    os.makedirs(new_directory)
+    print(f"Direktori '{new_directory}' berhasil dibuat.")
+else:
+    print(f"Direktori '{new_directory}' sudah ada.")
+
+# Membuat beberapa data contoh
+data = {
+    "nama": "Andi",
+    "usia": 25,
+    "kota": "Jakarta",
+    "tanggal_terdaftar": now.strftime("%Y-%m-%d %H:%M:%S")
+}
+
+# Menggunakan modul json untuk menyimpan data ke file JSON
+json_file = os.path.join(new_directory, "data.json")
+with open(json_file, "w") as f:
+    json.dump(data, f)
+    print(f"Data berhasil disimpan di '{json_file}'.")
+
+# Membaca kembali data dari file JSON
+with open(json_file, "r") as f:
+    loaded_data = json.load(f)
+    print("Data yang dimuat kembali dari file JSON:")
+    print(loaded_data)
