@@ -1,0 +1,36 @@
+def baca_file(file_path):
+    """Membaca file dan mengembalikan daftar baris."""
+    with open(file_path, 'r') as file:
+        return file.readlines()
+
+def tulis_file(file_path, data):
+    """Menuliskan daftar baris ke dalam file."""
+    with open(file_path, 'w') as file:
+        file.writelines(data)
+
+def proses_nama(nama):
+    """Membersihkan dan mengembalikan nama yang sudah diproses."""
+    return nama.strip().title()
+
+def urutkan_nama(nama_list):
+    """Mengurutkan daftar nama secara alfabetis."""
+    return sorted(nama_list)
+
+def main():
+    input_file = 'daftar_nama.txt'
+    output_file = 'daftar_nama_urut.txt'
+    
+    # Membaca file input
+    nama_list = baca_file(input_file)
+    
+    # Memproses nama
+    nama_list = [proses_nama(nama) for nama in nama_list]
+    
+    # Mengurutkan nama
+    nama_list = urutkan_nama(nama_list)
+    
+    # Menuliskan hasil ke file output
+    tulis_file(output_file, '\n'.join(nama_list) + '\n')
+
+if __name__ == "__main__":
+    main()
