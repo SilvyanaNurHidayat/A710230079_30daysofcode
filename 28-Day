@@ -1,0 +1,88 @@
+from collections import Counter
+
+# Menghitung jumlah kemunculan setiap elemen dalam daftar
+data = ['a', 'b', 'c', 'a', 'b', 'a']
+counter = Counter(data)
+print(counter)
+# Output: Counter({'a': 3, 'b': 2, 'c': 1})
+
+# Menghitung jumlah kemunculan huruf dalam string
+text = "hello world"
+counter_text = Counter(text)
+print(counter_text)
+# Output: Counter({'l': 3, 'o': 2, 'h': 1, 'e': 1, ' ': 1, 'w': 1, 'r': 1, 'd': 1})
+
+from collections import deque
+
+# Membuat deque dan menambahkan elemen
+d = deque()
+d.append('a')
+d.append('b')
+d.append('c')
+print(d)
+# Output: deque(['a', 'b', 'c'])
+
+# Menambahkan elemen ke kiri
+d.appendleft('x')
+print(d)
+# Output: deque(['x', 'a', 'b', 'c'])
+
+# Menghapus elemen dari kanan
+d.pop()
+print(d)
+# Output: deque(['x', 'a', 'b'])
+
+# Menghapus elemen dari kiri
+d.popleft()
+print(d)
+# Output: deque(['a', 'b'])
+
+
+from collections import OrderedDict
+
+# Membuat OrderedDict dan menambahkan elemen
+ordered_dict = OrderedDict()
+ordered_dict['a'] = 1
+ordered_dict['b'] = 2
+ordered_dict['c'] = 3
+print(ordered_dict)
+# Output: OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+
+# Mengubah urutan elemen
+ordered_dict.move_to_end('b')
+print(ordered_dict)
+# Output: OrderedDict([('a', 1), ('c', 3), ('b', 2)])
+
+
+from collections import defaultdict
+
+# Membuat defaultdict dengan default nilai list
+dd = defaultdict(list)
+dd['a'].append(1)
+dd['b'].append(2)
+print(dd)
+# Output: defaultdict(<class 'list'>, {'a': [1], 'b': [2]})
+
+# Membuat defaultdict dengan default nilai int
+dd_int = defaultdict(int)
+dd_int['a'] += 1
+dd_int['b'] += 2
+print(dd_int)
+# Output: defaultdict(<class 'int'>, {'a': 1, 'b': 2})
+
+
+from collections import namedtuple
+
+# Membuat namedtuple 'Point'
+Point = namedtuple('Point', ['x', 'y'])
+
+# Membuat instance dari Point
+p = Point(10, 20)
+print(p)
+# Output: Point(x=10, y=20)
+
+# Mengakses elemen dengan nama
+print(p.x)
+# Output: 10
+print(p.y)
+# Output: 20
