@@ -1,0 +1,42 @@
+# Membuat tuple kosong
+tuple_kosong = ()
+
+# Membuat tuple dengan beberapa nilai
+tuple_angka = (1, 2, 3, 4, 5)
+tuple_nama = ('Alice', 'Bob', 'Charlie')
+tuple_campuran = ('a', 1, True, 'Python')
+
+# Tuple dengan satu elemen perlu koma setelah elemen tersebut
+tuple_satu_elemen = (7,)
+
+tuple_angka = (1, 2, 3, 4, 5)
+print(tuple_angka[0])  # Output: 1
+print(tuple_angka[2])  # Output: 3
+
+tuple_nama = ('Alice', 'Bob', 'Charlie')
+for nama in tuple_nama:
+    print(nama)
+# Output:
+# Alice
+# Bob
+# Charlie
+
+def jumlah_bilangan(a, b):
+    return a + b
+
+bilangan = (3, 5)
+hasil = jumlah_bilangan(*bilangan)
+print(hasil)  # Output: 8
+
+def bagi_dan_sisa(a, b):
+    hasil_bagi = a // b
+    sisa = a % b
+    return (hasil_bagi, sisa)
+
+hasil = bagi_dan_sisa(20, 3)
+print(hasil)  # Output: (6, 2)
+
+list_tuple = [(1, 2), (3, 4), (5, 6)]
+dict_tuple = {('kunci1', 'nilai1'): 1, ('kunci2', 'nilai2'): 2}
+
+
